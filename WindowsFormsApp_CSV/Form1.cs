@@ -58,29 +58,32 @@ namespace WindowsFormsApp_CSV
                 double average = (item.Algebra + item.Calculus + item.Programming + item.Databases) / 4;
                 //MessageBox.Show(average.ToString());
 
-                if(average >= 80)
+                switch (average)
                 {
-                    table.Rows.Add(item.Firstname, item.Surname, Math.Round(average, 1), "A");
-                }
-                if(average >= 70 && average <=  79.9)
-                {
-                    table.Rows.Add(item.Firstname, item.Surname, Math.Round(average, 1), "B");
-                }
-                if (average >= 60 && average <= 69.9)
-                {
-                    table.Rows.Add(item.Firstname, item.Surname, Math.Round(average, 1), "C");
-                }
-                if (average >= 50 && average <= 59.9)
-                {
-                    table.Rows.Add(item.Firstname, item.Surname, Math.Round(average, 1), "D");
-                }
-                if (average >= 40 && average <= 49.9)
-                {
-                    table.Rows.Add(item.Firstname, item.Surname, Math.Round(average, 1), "E");
-                }
-                if (average >= 0 && average <= 39.9)
-                {
-                    table.Rows.Add(item.Firstname, item.Surname, Math.Round(average, 1), "F");
+                    case var expression when (average >= 80):
+                        table.Rows.Add(item.Firstname, item.Surname, Math.Round(average, 1), "A");
+                        break;
+
+                    case var expression when (average >= 70 && average <= 79.9):
+                        table.Rows.Add(item.Firstname, item.Surname, Math.Round(average, 1), "B");
+                        break;
+
+                    case var expression when (average >= 60 && average <= 69.9):
+                        table.Rows.Add(item.Firstname, item.Surname, Math.Round(average, 1), "C");
+                        break;
+
+                    case var expression when (average >= 50 && average <= 59.9):
+                        table.Rows.Add(item.Firstname, item.Surname, Math.Round(average, 1), "D");
+                        break;
+
+                    case var expression when (average >= 40 && average <= 49.9):
+                        table.Rows.Add(item.Firstname, item.Surname, Math.Round(average, 1), "E");
+                        break;
+
+                    case var expression when (average >= 0 && average <= 39.9):
+                        table.Rows.Add(item.Firstname, item.Surname, Math.Round(average, 1), "F");
+                        break;
+
                 }
             }
 
